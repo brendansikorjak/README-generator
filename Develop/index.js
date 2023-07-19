@@ -69,3 +69,37 @@ function promptUser() {
     },
   ]);
 }
+
+function generateREADME(answers) {
+  return `
+    # ${answers.title}
+
+    ## Description
+    ${answers.description}
+
+    ## Installation
+    ${answers.installation}
+
+    ## Usage
+    ${answers.usage}
+
+    ## License
+    ${answers.license}
+
+    ## Questions
+    https://github.com/${answers.github}
+  `;
+}
+
+async function init() {
+  try {
+    const answers = await promptUser();
+    const readmeContent = generateREADME(answers);
+    fs.writeFileSync("README.md", readmeContent);
+    console.log("README.md file successfully generated!");
+  } catch (error) {
+    console.error("Error generating README:", error);
+  }
+}
+
+init();
