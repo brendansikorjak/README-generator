@@ -1,17 +1,3 @@
-// // TODO: Include packages needed for this application
-
-// // TODO: Create an array of questions for user input
-// const questions = [];
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
-
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -83,11 +69,20 @@ function generateREADME(answers) {
     ## Usage
     ${answers.usage}
 
+    ## Contributing
+    ${answers.contributing}
+
+    ## Tests
+    ${answers.tests}
+
     ## License
     ${answers.license}
 
     ## Questions
-    https://github.com/${answers.github}
+    If you have any questions about this project feel free to send me email to the email address below
+
+    Email: ${answers.email}
+    Github: https://github.com/${answers.github}
   `;
 }
 
